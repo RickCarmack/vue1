@@ -158,39 +158,41 @@ Keyhashes and SHA1 Signatures
 
 When working with third parties like Facebook or Google Play Game Services (GPGS), sometimes you’ll be asked to generate a value from your keystore. For Google Play Game Services, you must use a release keystore for this task. For Facebook, you can develop/test with a debug keystore, but you’ll eventually need to provide them with information for an app signed with a release keystore.
 Both a keyhash (used by Facebook) and a SHA1 signature (used by GPGS) are short strings consisting of values that are calculated from the much larger keystore file. While these two are different values, the concept is the same — some standard math is performed on the values in the keystore to generate a unique value that cannot be easily reversed, helping ensure that the keystore hasn’t been altered by a hacker.
-Generating a Keyhash
 
-To generate the keyhash, you once again need to use the command line and enter a line which appears complex but in truth consists of just three commands:
-keytool -exportcert -alias yourkeyalias -keystore yourkeystore.keystore | openssl sha1 -binary | openssl base64
-The three commands taken separately are as follows:
-keytool -exportcert -alias yourkeyalias -keystore yourkeystore.keystore
-openssl sha1 -binary — uses the SHA1 method of calculating a signature, output as binary.
-openssl base64 — outputs the data in Base64.
+##### Generating a Keyhash
+
+To generate the keyhash, you once again need to use the command line and enter a line which appears complex but in truth consists of just three commands:<br>
+`keytool -exportcert -alias yourkeyalias -keystore yourkeystore.keystore | openssl sha1 -binary | openssl base64`
+The three commands taken separately are as follows:<br>
+keytool -exportcert -alias yourkeyalias -keystore yourkeystore.keystore<br>
+openssl sha1 -binary — uses the SHA1 method of calculating a signature, output as binary.<br>
+openssl base64 — outputs the data in Base64.<br>
+
 As you can see, these three commands are separated by pipe (|) characters. The first command runs and outputs its results, which in turn becomes the input for the second command. Then the second command outputs its results which become the input for the third command. This can cause potential issues because, if there’s even a slight problem in an earlier command, the error gets passed on to the next command rather than the expected data.  For instance, if you mis-type your password, this command series will not notify you but rather produce an SHA1 string based on the input of “Invalid Password”.
 In any case, as noted earlier in this tutorial, this is not a copy-and-paste command — you must adjust -alias and -keystore to your specific values. When running this command using the keystore created above, the result is:
-tZRNBKXmYKOa22HvFl57za4gvU0=
-Note the = sign at the end — this indicates the end of the string and it is important.
-Generating a SHA1 Signature
+tZRNBKXmYKOa22HvFl57za4gvU0=<br>
+Note the = sign at the end — this indicates the end of the string and it is important.<br>
 
-GPGS, in contrast, needs a text representation of the SHA1 output. Fortunately, the keytool utility can output this without any additional commands:
-keytool -exportcert -alias swapit -keystore swapit.keystore -list -v
+##### Generating a SHA1 Signature
+
+GPGS, in contrast, needs a text representation of the SHA1 output. Fortunately, the keytool utility can output this without any additional commands:<br>
+`keytool -exportcert -alias swapit -keystore swapit.keystore -list -v`<br>
 After you enter the password, the output will look something like this:
-Lua
 
-Alias name: swapit
-Creation date: Aug 24, 2014
-Entry type: PrivateKeyEntry
-Certificate chain length: 1
-Certificate[1]:
-Owner: CN=YourFirstName YourLastName, OU=Indie, O=Your Company Name, L=YourCity, ST=ST, C=US
-Issuer: CN=YourFirstName YourLastName, OU=Indie, O=Your Company Name, L=YourCity, ST=ST, C=US
-Serial number: 53fa57f7
-Valid from: Sun Aug 24 17:24:07 EDT 2014 until: Sun Jul 20 17:24:07 EDT 4752
-Certificate fingerprints:
+Alias name: swapit<br>
+Creation date: Aug 24, 2014<br>
+Entry type: PrivateKeyEntry<br>
+Certificate chain length: 1<br>
+Certificate[1]:<br>
+Owner: CN=YourFirstName YourLastName, OU=Indie, O=Your Company Name, L=YourCity, ST=ST, C=US<br>
+Issuer: CN=YourFirstName YourLastName, OU=Indie, O=Your Company Name, L=YourCity, ST=ST, C=US<br>
+Serial number: 53fa57f7<br>
+Valid from: Sun Aug 24 17:24:07 EDT 2014 until: Sun Jul 20 17:24:07 EDT 4752<br>
+<pre>Certificate fingerprints:<br>
 	 MD5:  66:22:E9:94:EA:14:EA:4A:06:EB:98:8B:DA:2B:25:D2
 	 SHA1: B5:94:4D:04:A5:E6:60:A3:9A:DB:61:EF:16:5E:7B:CD:AE:20:BD:4D
 	 Signature algorithm name: SHA1withRSA
-	 Version: 3
+	 Version: 3</pre>
 1
 2
 3
