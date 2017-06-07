@@ -111,26 +111,26 @@ Now hit the return/enter key to execute the command. You’ll then be prompted f
 
 Enter keystore password:  
 Re-enter new password:<br>
-What is your first and last name?
-[Unknown]:  YourFirstName YourLastName
-What is the name of your organizational unit?
-[Unknown]:  Indie      
-What is the name of your organization?
-[Unknown]:  Your Company Name
-What is the name of your City or Locality?
-[Unknown]:  YourCity
-What is the name of your State or Province?
-[Unknown]:  ST
-What is the two-letter country code for this unit?
-[Unknown]:  US
-Is CN=YourFirstName YourLastName, OU=Indie, O=Your Company Name, L=YourCity, ST=ST, C=US correct?
-[no]:  yes
-Generating 1,024 bit RSA key pair and self-signed certificate (SHA1withRSA) with a validity of 999,999 days
-for: CN=YourFirstName YourLastName, OU=Indie, O=Your Company Name, L=YourCity, ST=ST, C=US
-Enter key password for
-(RETURN if same as keystore password):  
-Re-enter new password:
-[Storing swapit.keystore]
+What is your first and last name?<br>
+[Unknown]:  YourFirstName YourLastName<br>
+What is the name of your organizational unit?<br>
+[Unknown]:  Indie<br>
+What is the name of your organization?<br>
+[Unknown]:  Your Company Name<br>
+What is the name of your City or Locality?<br>
+[Unknown]:  YourCity<br>
+What is the name of your State or Province?<br>
+[Unknown]:  ST<br>
+What is the two-letter country code for this unit?<br>
+[Unknown]:  US<br>
+Is CN=YourFirstName YourLastName, OU=Indie, O=Your Company Name, L=YourCity, ST=ST, C=US correct?<br>
+[no]:  yes<br>
+Generating 1,024 bit RSA key pair and self-signed certificate (SHA1withRSA) with a validity of 999,999 days<br>
+for: CN=YourFirstName YourLastName, OU=Indie, O=Your Company Name, L=YourCity, ST=ST, C=US<br>
+Enter key password for<br>
+(RETURN if same as keystore password):<br>
+Re-enter new password:<br>
+[Storing swapit.keystore]<br>
 	
 The first password is the password for the overall keystore file. Next you’ll be asked for your first and last name (surname). The prompt for
 “organizational unit” is for companies with multiple departments like “Engineering” or “Development” and this value is not important for most Corona
