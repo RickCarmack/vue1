@@ -176,7 +176,9 @@ Note the = sign at the end — this indicates the end of the string and it is im
 ##### Generating a SHA1 Signature
 
 GPGS, in contrast, needs a text representation of the SHA1 output. Fortunately, the keytool utility can output this without any additional commands:<br>
+
 `keytool -exportcert -alias swapit -keystore swapit.keystore -list -v`<br>
+
 After you enter the password, the output will look something like this:
 
 Alias name: swapit<br>
@@ -193,34 +195,9 @@ Valid from: Sun Aug 24 17:24:07 EDT 2014 until: Sun Jul 20 17:24:07 EDT 4752<br>
 	 SHA1: B5:94:4D:04:A5:E6:60:A3:9A:DB:61:EF:16:5E:7B:CD:AE:20:BD:4D
 	 Signature algorithm name: SHA1withRSA
 	 Version: 3</pre>
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-Alias name: swapit
-Creation date: Aug 24, 2014
-Entry type: PrivateKeyEntry
-Certificate chain length: 1
-Certificate[1]:
-Owner: CN=YourFirstName YourLastName, OU=Indie, O=Your Company Name, L=YourCity, ST=ST, C=US
-Issuer: CN=YourFirstName YourLastName, OU=Indie, O=Your Company Name, L=YourCity, ST=ST, C=US
-Serial number: 53fa57f7
-Valid from: Sun Aug 24 17:24:07 EDT 2014 until: Sun Jul 20 17:24:07 EDT 4752
-Certificate fingerprints:
-MD5:  66:22:E9:94:EA:14:EA:4A:06:EB:98:8B:DA:2B:25:D2
-SHA1: B5:94:4D:04:A5:E6:60:A3:9A:DB:61:EF:16:5E:7B:CD:AE:20:BD:4D
-Signature algorithm name: SHA1withRSA
-Version: 3
-In this output, the SHA1: line is the string of hex digits which you need to provide to GPGS when setting up your app, as well as the value you need to provide to Google when setting up your app there. Alternatively, if you need the SHA1 signature formatted as a string rather than a colon-separated hex string, use this command:
-keytool -exportcert -alias swapit -keystore swapit.keystore | openssl sha1 -hex
-	
+
+In this output, the SHA1: line is the string of hex digits which you need to provide to GPGS when setting up your app, as well as the value you need
+to provide to Google when setting up your app there. Alternatively, if you need the SHA1 signature formatted as a string rather than a colon-separated
+hex string, use this command:<br>
+
+`keytool -exportcert -alias swapit -keystore swapit.keystore | openssl sha1 -hex`
