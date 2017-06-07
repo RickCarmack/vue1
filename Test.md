@@ -110,9 +110,9 @@ With these changes, the line should look more like this:
 Now hit the return/enter key to execute the command. You’ll then be prompted for more information in a routine that will appear as follows in the command window:
 
 Enter keystore password:  
-Re-enter new password:\s\s
-What is your first and last name?\s\s
-[Unknown]:  YourFirstName YourLastName\s\s
+Re-enter new password:<br>
+What is your first and last name?
+[Unknown]:  YourFirstName YourLastName
 What is the name of your organizational unit?
 [Unknown]:  Indie      
 What is the name of your organization?
