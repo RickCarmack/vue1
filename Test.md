@@ -49,7 +49,7 @@ Analysis of real-time sensor data
 ### 7. What does it mean to sign an APK and how do you do it?
 
 	This is from a tutorial found at: 
->>>>[Understanding Android App Signing](https://coronalabs.com/blog/2014/08/26/tutorial-understanding-android-app-signing/)
++++[Understanding Android App Signing](https://coronalabs.com/blog/2014/08/26/tutorial-understanding-android-app-signing/)
 
 #### The Keystore
 
