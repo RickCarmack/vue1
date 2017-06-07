@@ -74,10 +74,10 @@ Analysis of real-time sensor data
 	On Mac, this translates to /Users/yourloginname and on Windows it translates to something like C:\Users\yourloginname. Within this home folder, you can
 	create a folder to hold your keystores.
 
-	+ In Windows, type:
-		`md Keystores`
-	+ In OS X, type:
-		`mkdir Keystores`
++ In Windows, type:
+	`md Keystores`
++ In OS X, type:
+	`mkdir Keystores`
 
 	Once this is done, you can access the folder by typing:
 		`cd Keystores`
