@@ -74,9 +74,9 @@ Analysis of real-time sensor data
 	On Mac, this translates to /Users/yourloginname and on Windows it translates to something like C:\Users\yourloginname. Within this home folder, you can
 	create a folder to hold your keystores.
 
-	* In Windows, type:
+	+ In Windows, type:
 		`md Keystores`
-	* In OS X, type:
+	+ In OS X, type:
 		`mkdir Keystores`
 
 	Once this is done, you can access the folder by typing:
@@ -92,12 +92,12 @@ Analysis of real-time sensor data
 	need to install it (see below). Following this, all of the parts that begin with a hyphen (-) indicate parameters for the keytool command. Those options
 	are as follows, and those in bold are the two which must be customized (the others can remain as shown):
 
-	* -genkey — Tells keytool to generate a key.
-	* -v — Tells keytool to be verbose (i.e. tell you what it’s doing).
-	* -keystore — The filename to save the keystore as.
-	* -alias — The alias name to identify the keystore.
-	* -keyalg RSA — This says to use the RSA method to generate the keystore.
-	* -validity 999999 — This says to make the keystore valid for 999,999 days.
+	+ -genkey — Tells keytool to generate a key.
+	+ -v — Tells keytool to be verbose (i.e. tell you what it’s doing).
+	+ -keystore — The filename to save the keystore as.
+	+ -alias — The alias name to identify the keystore.
+	+ -keyalg RSA — This says to use the RSA method to generate the keystore.
+	+ -validity 999999 — This says to make the keystore valid for 999,999 days.
 
 	For the keystore name, provide it with a name that makes sense. In theory, you should use a unique release keystore for each app, but it’s not required.
 	For example, a puzzle game named “SwapIt” may have a keystore name such as swapit.keystore, but a more general release keystore could simply be release.keystore.
