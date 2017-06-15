@@ -7,6 +7,7 @@
 3. KiOWARE (http://www.kioware.com/default.aspx)
 4. Moki (https://moki.com/)
 5. Soti (https://www.soti.net/)
+6. Relution (https://www.relution.io/en/kiosk-mode/)
 
 ## Does it allow starting an app remotely?
 
