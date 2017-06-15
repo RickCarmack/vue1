@@ -8,6 +8,7 @@
 4. Moki (https://moki.com/)
 5. Soti (https://www.soti.net/)
 6. Relution (https://www.relution.io/en/kiosk-mode/)
+
 Note: To navigate to the links above without leaving this page `ctrl-click` the link to open in new tab.
 
 ## Does it allow starting an app remotely?
